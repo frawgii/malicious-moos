@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dvj5ot0v25rty"]
+
+[ext_resource type="Script" uid="uid://dgxmn7aco0oa3" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cejv1hk3kcdh1" path="res://test-cow-colored.png" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://etg2hg4ra6pu" path="res://test-cow-c-2.png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://cl324jm5n41fu" path="res://test-cow-c-3.png" id="4_7mycd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_272bh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1bvp3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lquwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1bvp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7mycd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1bvp3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D" unique_id=832719177]
+position = Vector2(393, 233)
+script = ExtResource("1_0xm2m")
+
+[node name="Cow" type="AnimatedSprite2D" parent="." unique_id=1642518537]
+position = Vector2(-283.99997, -119.99997)
+scale = Vector2(0.1285, 0.1285)
+sprite_frames = SubResource("SpriteFrames_272bh")
+animation = &"walk"
+
+[node name="Timer" type="Timer" parent="." unique_id=1809367583]
